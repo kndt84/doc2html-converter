@@ -5,6 +5,7 @@ https://kobayashihideo.jp/
 
 # Requirements
 Python 3 installation is required.
+
 https://www.python.org/downloads/
 
 # Setup
