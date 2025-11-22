@@ -1,22 +1,73 @@
-# doc2html-converter
-This script converts a word file in docx format to HTML format. It was created by ChatGPT to create the HTML file for the manuscript on this page.
+# Word文書（docx）からHTML変換ツール
 
-https://kobayashihideo.jp/
+## このツールについて
+このツールは、Microsoft Word形式（.docx）の文書をHTMLファイルに変換するシンプルなプログラムです。特にルビ（ふりがな）付きの文書を適切にHTML形式に変換することができます。
 
-# Requirements
-Python 3 installation is required.
+[小林秀雄公式サイト](https://kobayashihideo.jp/)の原稿HTMLファイル作成のために開発されました。
 
-https://www.python.org/downloads/
+## 特徴
+- ルビ（ふりがな）の適切な変換
+- 段落や書式の保持
+- 簡単な操作方法
 
-# Setup
-Install the necessary libraries using pip.
+## 必要なもの
+- Python 3（プログラムを実行するために必要です）
+  - [Pythonのダウンロードページ](https://www.python.org/downloads/)からインストールできます
+  - インストール時に「Add Python to PATH」にチェックを入れることをお勧めします
+
+## セットアップ手順
+
+### 1. このリポジトリをダウンロードする
+- 画面上部の緑色の「Code」ボタンをクリックし、「Download ZIP」を選択
+- ダウンロードしたZIPファイルを任意の場所に解凍
+
+### 2. 必要なライブラリをインストールする
+コマンドプロンプト（Windowsの場合）またはターミナル（MacやLinuxの場合）を開き、以下のコマンドを実行します：
+
 ```
-cd doc2html-converter
+cd 解凍したフォルダのパス/doc2html-converter
 pip install -r requirements.txt
 ```
 
-# Usage
-If you run this script in Python and specify a docx-format file as the first argument, a file with the same name with the extension html will be created in the same folder.
+※「解凍したフォルダのパス」は、実際にファイルを解凍した場所に置き換えてください。
+
+## 使い方
+
+### 基本的な使い方
+1. 変換したいWord文書（.docx形式）を用意します
+2. コマンドプロンプトまたはターミナルで以下のコマンドを実行します：
+
 ```
-python3 docx2html.py document.docx
+python docx2html.py 変換したいファイル.docx
 ```
+
+3. 同じフォルダ内に「変換したいファイル.html」という名前のHTMLファイルが作成されます
+
+### 例
+```
+python docx2html.py 原稿.docx
+```
+実行すると、「原稿.html」というファイルが作成されます。
+
+## 注意点
+- 変換元のファイルは必ず.docx形式である必要があります（.docは非対応）
+- 複雑な書式や表、画像などは正確に変換されない場合があります
+- 変換後のHTMLファイルは、必要に応じてCSSでスタイルを調整できます
+
+## トラブルシューティング
+
+### 「python」コマンドが見つからない場合
+- Pythonが正しくインストールされているか確認してください
+- 「python3」コマンドを試してみてください：
+  ```
+  python3 docx2html.py 変換したいファイル.docx
+  ```
+
+### 必要なライブラリがないというエラーが出る場合
+以下のコマンドで個別にインストールしてみてください：
+```
+pip install lxml
+```
+
+### その他の問題
+問題が解決しない場合は、このリポジトリのIssuesセクションで質問してください。
